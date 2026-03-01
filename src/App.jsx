@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./components/Navbar/Navbar";
 import HeroSection from "./components/HeroSection/HeroSection";
-import Card from "./components/Card/cards";
+import Card from "./components/Card/Cards";
 import Pagination from "./components/Pagination/pagination";
 
 const App = () => {
@@ -48,13 +48,8 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navbar */}
       <Navbar />
-
-      {/* Hero Section */}
       <HeroSection />
-
-      {/* Наушники секция */}
       <section className="py-12">
         <div className="max-w-[1400px] mx-auto px-6">
           <h2 className="mb-6 text-xl font-semibold text-gray-700">Наушники</h2>
@@ -65,14 +60,12 @@ const App = () => {
             </div>
           )}
 
-          {/* Сетка карточек - 3 в ряд */}
           <div className="grid grid-cols-3 gap-6 mb-10">
             {products.map((product) => (
               <Card product={product} key={product.id} />
             ))}
           </div>
 
-          {/* Пагинация */}
           <div className="flex flex-col items-center gap-4 pb-10">
             <Pagination
               currentPage={page}

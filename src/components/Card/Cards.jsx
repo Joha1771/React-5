@@ -3,9 +3,7 @@ import React from "react";
 const Card = ({ product }) => {
   return (
     <div className="relative flex flex-col h-full p-6 transition-all duration-300 bg-white border border-gray-200 shadow-sm rounded-2xl hover:shadow-xl">
-      {/* Иконка сердца (избранное) */}
       <button className="absolute z-10 p-2 transition-colors bg-white rounded-full top-4 right-4 hover:bg-gray-100">
-        {/* Вставь SVG иконку сердца */}
         <svg
           className="w-5 h-5"
           fill="none"
@@ -21,7 +19,6 @@ const Card = ({ product }) => {
         </svg>
       </button>
 
-      {/* Картинка товара */}
       <div className="flex items-center justify-center mb-6 h-44">
         <img
           src={product.thumbnail}
@@ -30,13 +27,10 @@ const Card = ({ product }) => {
         />
       </div>
 
-      {/* Название и рейтинг */}
       <div className="mb-4">
         <h3 className="mb-2 text-base font-semibold text-gray-800">
           {product.title}
         </h3>
-
-        {/* Рейтинг */}
         <div className="flex items-center gap-1">
           <span className="text-yellow-400">★</span>
           <span className="text-sm font-medium text-gray-600">
@@ -45,7 +39,6 @@ const Card = ({ product }) => {
         </div>
       </div>
 
-      {/* Цена */}
       <div className="flex items-center justify-between mt-auto">
         <div className="flex flex-col">
           <span className="text-xl font-bold text-orange-500">
@@ -62,7 +55,6 @@ const Card = ({ product }) => {
           )}
         </div>
 
-        {/* Скидка */}
         {product.discountPercentage > 0 && (
           <span className="text-sm font-medium text-red-500">
             -{product.discountPercentage.toFixed(0)}%
